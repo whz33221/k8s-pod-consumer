@@ -1,0 +1,12 @@
+spring:
+  applicaiton:
+    name: springboot-app-consumer
+
+  cloud:
+    kubernetes:
+      config:
+        sources:
+          - name: ${spring.applicaiton.name}-${spring.profiles.active}
+            namespace: demo-project
+  profiles:
+    default: local
